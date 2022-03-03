@@ -1,0 +1,99 @@
+.about {
+    background-color: beige;
+    padding: 44px;
+}
+
+.contact {
+    background-color: beige;
+    padding: 44px;
+    text-align: center;
+    
+}
+
+.spinner {
+    background-color: beige;
+    text-align: center;
+    font-size: x-large;
+    padding: 30px;
+}
+
+.spinnerDiv {
+    background-color: beige;
+    text-align: center;
+    font-size: x-large;
+    padding: 30px;
+}
+
+.home {
+    background-color: beige;
+    padding: 20px;
+}
+
+.h2 {
+    padding: 20px;
+    display: table-row-group;
+}
+
+.articlesList {
+    background-color: beige;
+    text-align: center;
+    padding: 40px;
+}
+
+.articleTitle {
+    text-decoration: none;
+    display: inline-flex;
+    color:black;
+
+}
+
+.articlesHeader {
+    padding: 10px;
+    display: inline-block;
+    border-style: groove;
+    border-color: black;
+    /* background-color: #31aed4; */
+    background: rgb(110,147,205);
+background: radial-gradient(circle, rgba(110,147,205,1) 0%, rgba(148,205,233,1) 100%);
+    border-radius: 30%;
+}
+
+.articlesTitlesListed {
+    border-width: thin;
+    border-style: solid;
+    padding: inherit;
+}
+
+.address {
+    font-weight: bold;
+}
+
+.contactForm {
+    border-style: solid;
+    display: inline-block;
+    padding: 15px;
+    background: linear-gradient(90deg, rgba(110,147,205,1) 0%, rgba(148,205,233,1) 25%);
+    border-radius: 5%;
+    border-color: beige;
+}
+
+.label {
+    display: grid;
+}
+
+.nameError {
+    color: red;
+    font-weight: bold;
+}
+
+.emailError {
+    color: red;
+font-weight: bold;
+font-size: small;
+}
+
+.messageError {
+    color: red;
+    font-weight: bold;
+    font-size: small;
+}
