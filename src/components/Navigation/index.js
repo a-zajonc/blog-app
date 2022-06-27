@@ -1,6 +1,6 @@
-import styles from './Navigation.module.css'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import styles from './Navigation.module.css';
+import PropTypes from 'prop-types';
+import { Link } from "react-router-dom"
 
 export function Navigation({ imgSrc, alt }) {
     return <div className={styles.navigation}>
