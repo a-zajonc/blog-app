@@ -9,7 +9,7 @@ import { ArticlePage } from './pages/ArticlePage';
 import { ArticlesList } from './pages/ArticlesList';
 import { Contact } from './pages/Contact.js';
 import { Home } from './pages/Home.js';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 function App() {
@@ -19,6 +19,8 @@ function App() {
       <Router>
         <div>
           <Navigation imgSrc="https://whiterabbit.group/images/white-rabbit-logo-black.jpg" alt="Logo z Królikiem" />
+        <div className={styles.App}>
+          <Navigation imgSrc="https://iconarchive.com/download/i86440/martin-berube/flat-animal/rabbit.ico" alt="Logo z Królikiem" />
           <Routes>
             <Route exact path='/' element={< Home />}></Route>
             <Route exact path='/about' element={< About />}></Route>
@@ -34,3 +36,4 @@ function App() {
 }
 
 export default App;
+
