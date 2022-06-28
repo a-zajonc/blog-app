@@ -1,5 +1,4 @@
-import * as React from 'react'
-import styles from './App.module.css';
+import * as React from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import {
@@ -18,6 +17,8 @@ function App() {
   return (
     <ChakraProvider>
       <Router>
+        <div>
+          <Navigation imgSrc="https://whiterabbit.group/images/white-rabbit-logo-black.jpg" alt="Logo z Królikiem" />
         <div className={styles.App}>
           <Navigation imgSrc="https://iconarchive.com/download/i86440/martin-berube/flat-animal/rabbit.ico" alt="Logo z Królikiem" />
           <Routes>
@@ -35,3 +36,4 @@ function App() {
 }
 
 export default App;
+
