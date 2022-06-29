@@ -1,8 +1,6 @@
 import React from "react";
-import styles from "./Sort.module.css";
+import { Select, Box } from '@chakra-ui/react'
 
-
-// onSortChange({type, direction})
 
 export function Sort({ onSortChange }) {
     const [type, setType] = React.useState('title')
@@ -13,18 +11,17 @@ export function Sort({ onSortChange }) {
     }, [type, direction, onSortChange])
 
 
-    return <div>
-        <select className={styles.select} onChange={event => setType(event.target.value)} >
+    return <Box display="grid" justifyContent="right">
+        <Select w="120px" variant='outline' size="xsm" onChange={event => setType(event.target.value)} >
             <option value="title">Tytuł</option>
             <option value="date">Data</option>
 
-        </select>
-        <select className={styles.select} onChange={event => setDirection(event.target.value)}>
+        </Select>
+        <Select w="120px" variant='outline' size="xsm" paddingBottom={2} onChange={event => setDirection(event.target.value)}>
             <option value="default">Domyślne</option>
             <option value="1">Rosnąco</option>
             <option value="-1">Malejąco</option>
-        </select>
-    </div>
-
+        </Select>
+    </Box>
 }
 

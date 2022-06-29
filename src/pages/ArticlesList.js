@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { convertToSlug } from '../ConvertToSlug';
 import { Sort } from '../components/Sort/Sort';
 import { isBefore, parseISO } from 'date-fns';
+import { Box, Heading, Text, Center, ListItem, UnorderedList } from '@chakra-ui/react';
 
 const sort = (first, second, sortData) => {
     const sortDirection = Number(sortData.direction)
@@ -25,22 +26,26 @@ export function ArticlesList() {
 
     const handleSort = React.useCallback(sortDirection => setSortData(sortDirection), [])
 
-    return <div className={styles.articlesList}>
-        <h2 className={styles.articlesHeader}>Lista artykułów:</h2>
-        <Sort onSortChange={handleSort} />
-        <div className={styles.articlesTitlesListed}>
-            {
-                dataBase
-                    .sort((first, second) => sort(first, second, sortData))
-                    .map((article) => (
-                        <div key={convertToSlug(article.title)}>
-                            <Link to={`/articles/${convertToSlug(article.title)}`} className={styles.articleTitle} >
-                                <h4>{article.title}</h4>
-                            </Link>
-                        </div>
-                    ))}
-        </div>
-    </div>
+    return <Box p={5}>
+        <Heading padding={2} textAlign="center">Lista artykułów:</Heading>
+        <Center>
+            <Box maxW='xlg'>
+                <Sort onSortChange={handleSort} />
+                <Box borderWidth='1px' borderRadius={10} padding={2} paddingLeft={10}>
+                    {
+                        dataBase
+                            .sort((first, second) => sort(first, second, sortData))
+                            .map((article) => (
+                                <div key={convertToSlug(article.title)}>
+                                    <Link to={`/articles/${convertToSlug(article.title)}`} className={styles.articleTitle} >
+                                        <UnorderedList><ListItem fontSize="4xl" marginRight={50}>{article.title}</ListItem></UnorderedList>
+                                    </Link>
+                                </div>
+                            ))}
+                </Box>
+            </Box>
+        </Center>
+    </Box>
 }
 
 
