@@ -17,19 +17,15 @@ function App() {
   return (
     <ChakraProvider>
       <Router>
-        <div>
-          <Navigation imgSrc="https://whiterabbit.group/images/white-rabbit-logo-black.jpg" alt="Logo z Królikiem" />
-        <div className={styles.App}>
-          <Navigation imgSrc="https://iconarchive.com/download/i86440/martin-berube/flat-animal/rabbit.ico" alt="Logo z Królikiem" />
-          <Routes>
-            <Route exact path='/' element={< Home />}></Route>
-            <Route exact path='/about' element={< About />}></Route>
-            <Route exact path='/articles' element={< ArticlesList />}></Route>
-            <Route exact path='/contact' element={< Contact />}></Route>
-            <Route exact path='articles/:slug' element={< ArticlePage />}></Route>
-          </Routes>
-          <Footer />
-        </div>
+        <Navigation imgSrc="https://whiterabbit.group/images/white-rabbit-logo-black.jpg" alt="Logo z Królikiem" />
+        <Routes>
+          <Route exact path='/' element={< Home />}></Route>
+          <Route exact path='/about' element={< About />}></Route>
+          <Route exact path='/articles' element={< ArticlesList />}></Route>
+          <Route exact path='/contact' element={< Contact />}></Route>
+          <Route exact path='articles/:slug' element={< ArticlePage />}></Route>
+        </Routes>
+        <Footer />
       </Router>
     </ChakraProvider>
   )
