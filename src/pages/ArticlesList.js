@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './pages.module.css'
 import { dataBase } from '../db';
 import { Link } from 'react-router-dom';
 import { convertToSlug } from '../ConvertToSlug';
@@ -36,11 +35,11 @@ export function ArticlesList() {
                         dataBase
                             .sort((first, second) => sort(first, second, sortData))
                             .map((article) => (
-                                <div key={convertToSlug(article.title)}>
-                                    <Link to={`/articles/${convertToSlug(article.title)}`} className={styles.articleTitle} >
+                                <Box key={convertToSlug(article.title)}>
+                                    <Link to={`/articles/${convertToSlug(article.title)}`}>
                                         <UnorderedList><ListItem fontSize="4xl" marginRight={50}>{article.title}</ListItem></UnorderedList>
                                     </Link>
-                                </div>
+                                </Box>
                             ))}
                 </Box>
             </Box>

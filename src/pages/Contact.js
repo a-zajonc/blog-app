@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './pages.module.css'
 import { useState } from 'react';
+import { Container, Box, Text, Center, Heading, Input, Button, FormControl, FormLabel } from '@chakra-ui/react';
 
 export function Contact() {
 
@@ -8,6 +8,7 @@ export function Contact() {
 
     const [values, setValues] = useState({
         name: '',
+        surname: '',
         message: '',
         email: '',
     });
@@ -36,6 +37,14 @@ export function Contact() {
         }));
     };
 
+    const handleSurnameInputChange = (event) => {
+        event.persist();
+        setValues((values) => ({
+            ...values,
+            surname: event.target.value,
+        }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!values.name || !values.email || !values.message) {
@@ -45,53 +54,64 @@ export function Contact() {
     };
 
     return (
-        <div className={styles.contact}><address >
-            <span className={styles.address}>Nasz adres:</span><br />
-            Zajonc SA<br />
-            Uszata 5<br />
-            123-456 Sianowo <br />
-        </address>
-            <div>
-                <form onSubmit={handleSubmit} className={styles.contactForm}>
-                    <h4>Napisz do nas!</h4>
-                    <label className={styles.label}>
-                        <span>Twoje imię:</span>
-                        <input
+        <Container padding={2} marginTop={5}>
+            <Container border="1px" borderColor="#CFA68F" padding={2} borderRadius={10}>
+                <form onSubmit={handleSubmit}>
+                    <FormControl padding={2} isRequired>
+                        <Heading textAlign={"center"}>Napisz do nas!</Heading>
+                        <FormLabel> Twoje imię:</FormLabel>
+                        <Input
                             placeholder="Wpisz imię"
                             type="text"
                             onChange={handleNameInputChange}
-                            // {(e) => setName(e.target.value)}
                             value={values.name}>
-                        </input>
-                        {submitted && !values.name && <span className={styles.nameError}>Wpisz swoję imię</span>}
-                    </label>
-                    <label className={styles.label}>
-                        <span>Twój email:</span>
-                        <input
+                        </Input>
+                    </FormControl>
+                    <FormControl padding={2}>
+                        <FormLabel>Twoje nazwisko</FormLabel>
+                        <Input
+                            placeholder="Wpisz nazwisko"
+                            type="text"
+                            onChange={handleSurnameInputChange}
+                            value={values.surname}>
+                        </Input>
+                    </FormControl>
+                    <FormControl isRequired padding={2}>
+                        <FormLabel>Twój email:</FormLabel>
+                        <Input
                             placeholder="Wpisz email"
                             type="email"
                             onChange={handleEmailInputChange}
                             value={values.email}>
-                        </input>
-                        {submitted && !values.email && <span className={styles.emailError}>Pole email nie może być puste!</span>}
-
-                    </label>
-                    <label className={styles.label}>
-                        <span>Wiadomość:</span>
-                        <input
+                        </Input>
+                    </FormControl>
+                    <FormControl isRequired padding={2}>
+                        <FormLabel>Wiadomość:</FormLabel>
+                        <Input
                             placeholder="Wpisz wiadomość"
                             type="text"
                             onChange={handleMessageInputChange}
                             value={values.message}>
-                        </input>
-                        {submitted && !values.message && <span className={styles.messageError}>Nie możesz wysłać pustej wiadomości</span>}
-                    </label>
-                    <button type="submit" >Wyślij!</button>
+                        </Input>
+                    </FormControl>
+                    <Center>
+                        <Button type="submit" bg={"#CFA68F"} padding={2}>
+                            Wyślij!
+                        </Button>
+                    </Center>
+                    {(submitted === true) && <Text padding={2} textAlign="center" fontSize="lg" fontWeight="bold">
+                        Dziękujemy za wiadomość. Odezwiemy się w ciągu 2-3 dni!
+                    </Text>}
                 </form>
-                {(submitted === true) && (values.message && values.email && values.name) && <div className={styles.successSubmit}>Dziękujemy za wiadomość. Odezwiemy się w ciągu 2-3 dni!</div>}
-            </div>
-        </div>
+            </Container>
+            <Center>
+                <Box marginTop={5}>
+                    <Text fontSize={"lg"}>Nasz adres:</Text>
+                    <Text fontSize={"sm"}>Zajonc SA </Text>
+                    <Text fontSize={"sm"}>Uszata 5</Text>
+                    <Text fontSize={"sm"}>123 - 456 Sianowo</Text>
+                </Box>
+            </Center>
+        </Container>
     )
 }
-
-// różnica między < input type = "button" > a < button type = "submit" >
