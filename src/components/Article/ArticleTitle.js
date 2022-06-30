@@ -1,9 +1,11 @@
 import React from 'react';
-import styles from './Article.module.css';
+import { Center, Heading } from '@chakra-ui/react';
 import PropTypes from 'prop-types'
 
 export function ArticleTitle({ title }) {
-    return <div className={styles.title}>{title}</div>
+    return <Center>
+        <Heading padding={2}>{title}</Heading>
+    </Center>
 }
 
 ArticleTitle.propTypes = {

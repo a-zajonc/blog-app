@@ -10,7 +10,7 @@ import { Box, Center, Divider, HStack, Text, Link } from '@chakra-ui/react';
 
 export function Footer() {
     return <Box pos="bottom" padding={5} >
-        <Divider />
+        <Divider borderColor="black" />
         <Text fontSize="md" textAlign={'center'} paddingTop={2}>Znajdź nas:</Text>
         <Center>
             <HStack spacing='24px'>
@@ -19,6 +19,8 @@ export function Footer() {
                 <Link href="https://twitter.com/?lang=pl"><FontAwesomeIcon icon={faTwitter} size="2x" /></Link>
             </HStack>
         </Center>
-        <Text fontSize="xs" textAlign={"right"}>© 2022 Zajonc. All Rights Reserved.</Text>
+        <Text fontSize="xs" textAlign={"right"}>
+            © 2022 Zajonc. All Rights Reserved.
+        </Text>
     </Box>
 }

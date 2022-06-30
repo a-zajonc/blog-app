@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import format from "date-fns/format";
 import parseISO from 'date-fns/parseISO';
-import { pl } from 'date-fns/locale'
+import { pl } from 'date-fns/locale';
+import { Text } from "@chakra-ui/react";
 
 
 export function ArticleDate({ date }) {
@@ -12,7 +13,7 @@ export function ArticleDate({ date }) {
         locale: pl,
     })
 
-    return <div>{formattedDate}</div>
+    return <Text textAlign={"right"} marginRight={20}>{formattedDate}</Text>
 
 }
 

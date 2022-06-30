@@ -1,18 +1,16 @@
 import React from 'react';
 import { Article } from '../components/Article';
-import { Spinner } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './pages.module.css'
 import { BackButton } from '../components/BackButton';
 import { useParams } from 'react-router-dom';
 import { dataBase } from '../db';
 import { convertToSlug } from '../ConvertToSlug';
+import { Box, Center, Spinner } from '@chakra-ui/react';
 
 const getSingleArticle = async (slug) => {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(dataBase.find(article => convertToSlug(article.title) === slug))
-        }, 100)
+        }, 300)
     })
 }
 
@@ -29,9 +27,9 @@ export function ArticlePage() {
     }, [slug])
 
     return (
-        <div>
+        <Box padding={2}>
             <BackButton />
-            <div>
+            <Box>
                 {article ? (
                     <Article
                         imgSrc={article.imgSrc}
@@ -41,11 +39,9 @@ export function ArticlePage() {
                         author={article.author}
                         content={article.content}
                     />)
-                    : <div className={styles.spinnerDiv}>
-                        <Spinner animation="border" variant="primary" className={styles.spinner} />
-                    </div>
+                    : <Center><Spinner size='xl' thickness='4px' /></Center>
                 }
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }

@@ -1,10 +1,23 @@
 import React from 'react';
-import styles from './BackButton.module.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+// import { Button } from '@chakra-ui/react';
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+} from '@chakra-ui/react'
+
 
 export function BackButton() {
-    return <Link to="/articles">
-        <div className={styles.backbuttonbackground}><button className={styles.button}>Powrót listy artykułów</button>
-        </div>
-    </Link>
+    return <Breadcrumb padding={1} fontSize="sm">
+        <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Strona główna</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+            <BreadcrumbLink href='/articles'>Lista artykułów</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink href='#'>Artykuł</BreadcrumbLink>
+        </BreadcrumbItem>
+    </Breadcrumb>
 }
