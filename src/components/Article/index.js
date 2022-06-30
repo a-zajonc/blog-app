@@ -1,23 +1,21 @@
-import styles from './Article.module.css'
 import { HeroImage } from "./HeroImage";
 import { ArticleTitle } from "./ArticleTitle";
 import { ArticleAuthor } from "./ArticleAuthor";
 import { ArticleContent } from "./ArticleContent";
 import PropTypes from 'prop-types'
 import { ArticleDate } from './ArticleDate';
+import { Box } from '@chakra-ui/react'
 
 export function Article({ imgSrc, alt, title, author, content, date }) {
 
-    return <div className={styles.article}>
+    return <Box>
         <HeroImage imgSrc={imgSrc}
             alt={alt} />
         <ArticleTitle title={title} />
-        <div className={styles.authorAndDate}>
-            <ArticleDate date={date} />
-            <ArticleAuthor author={author} />
-        </div>
+        <ArticleDate date={date} />
+        <ArticleAuthor author={author} />
         <ArticleContent content={content} />
-    </div>
+    </Box>
 }
 
 Article.propTypes = {

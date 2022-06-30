@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './Article.module.css';
 import PropTypes from 'prop-types'
+import { Center, Image } from '@chakra-ui/react';
 
 export function HeroImage({ imgSrc, alt }) {
-    return <div>
-        <img className={styles.heroimage} src={imgSrc} alt={alt} />
-    </div>
+    return <Center>
+        <Image src={imgSrc} alt={alt} height="500px" borderRadius={10} />
+    </Center>
 }
 
 HeroImage.propTypes = {

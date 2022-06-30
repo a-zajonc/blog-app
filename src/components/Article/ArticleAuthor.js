@@ -1,9 +1,11 @@
 import React from 'react';
-import styles from './Article.module.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { Text, Center } from '@chakra-ui/react';
 
 export function ArticleAuthor({ author }) {
-    return <div className={styles.author}>{author}</div>
+    return <Center paddingBottom={2}>
+        <Text fontSize={"sm"}>{author}</Text>
+    </Center>
 }
 
 ArticleAuthor.propTypes = {

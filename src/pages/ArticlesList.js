@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { convertToSlug } from '../ConvertToSlug';
 import { Sort } from '../components/Sort/Sort';
 import { isBefore, parseISO } from 'date-fns';
-import { Box, Heading, Text, Center, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Box, Heading, Center, ListItem, UnorderedList } from '@chakra-ui/react';
 
 const sort = (first, second, sortData) => {
     const sortDirection = Number(sortData.direction)
@@ -47,6 +47,3 @@ export function ArticlesList() {
         </Center>
     </Box>
 }
-
-
-                    // .sort((first, second) => first.title.localeCompare(second.title))

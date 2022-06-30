@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Box, Image, Stack, Button } from '@chakra-ui/react'
 
 export function Navigation({ imgSrc, alt }) {
-    return <Box display="flex" justifyContent="space-between" paddingRight={5} paddingLeft={5} bg="#CFA68F">
+    return <Box display="flex" justifyContent="space-between" paddingRight={5} paddingLeft={5} bg="#CFA68F" roundedBottom={10}>
         <Link to="/">
             <Box justifyContent="left">
                 <Image src={imgSrc} alt={alt} boxSize='100' borderRadius="full" marginTop={1} marginBottom={1} />
@@ -15,10 +15,10 @@ export function Navigation({ imgSrc, alt }) {
             justify={["center", "space-between", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}
             pt={[4, 4, 0, 0]}>
-            <Button colorScheme='whiteAlpha' size='lg'><Link to="/">Strona główna</Link></Button>
-            <Button colorScheme='whiteAlpha' size='lg'><Link to="/articles">Lista artykułów</Link></Button>
-            <Button colorScheme='whiteAlpha' size='lg'><Link to="/about" >O nas</Link></Button>
-            <Button colorScheme='whiteAlpha' size='lg'><Link to="/contact">Kontakt</Link></Button>
+            <Link to="/"><Button colorScheme='whiteAlpha' size='lg'>Strona główna</Button></Link>
+            <Link to="/articles"><Button colorScheme='whiteAlpha' size='lg'>Lista artykułów</Button></Link>
+            <Link to="/about" ><Button colorScheme='whiteAlpha' size='lg'>O nas</Button></Link>
+            <Link to="/contact"><Button colorScheme='whiteAlpha' size='lg'>Kontakt</Button></Link>
         </Stack>
     </Box>
 }
