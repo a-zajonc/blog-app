@@ -104,14 +104,12 @@ export function Contact() {
                     </Text>}
                 </form>
             </Container>
-            <Center>
-                <Box marginTop={5}>
-                    <Text fontSize={"lg"}>Nasz adres:</Text>
-                    <Text fontSize={"sm"}>Zajonc SA </Text>
-                    <Text fontSize={"sm"}>Uszata 5</Text>
-                    <Text fontSize={"sm"}>123 - 456 Sianowo</Text>
-                </Box>
-            </Center>
+            <Box marginTop={5}>
+                <Text textAlign="center" fontSize={"lg"}>Nasz adres:</Text>
+                <Text textAlign="center" fontSize={"sm"}>Zajonc SA </Text>
+                <Text textAlign="center" fontSize={"sm"}>Uszata 5</Text>
+                <Text textAlign="center" fontSize={"sm"}>123 - 456 Sianowo</Text>
+            </Box>
         </Container>
     )
 }
